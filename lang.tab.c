@@ -65,8 +65,12 @@
 #line 1 "lang.y" /* yacc.c:339  */
 
 	#include <stdio.h>
+	int yylex();
+	int yyerror(char *errmsg){
+		printf("%s\n", errmsg);
+	}
 
-#line 70 "lang.tab.c" /* yacc.c:339  */
+#line 74 "lang.tab.c" /* yacc.c:339  */
 
 # ifndef YY_NULLPTR
 #  if defined __cplusplus && 201103L <= __cplusplus
@@ -118,10 +122,10 @@ extern int yydebug;
 
 union YYSTYPE
 {
-#line 4 "lang.y" /* yacc.c:355  */
+#line 8 "lang.y" /* yacc.c:355  */
 int ival; float fval;
 
-#line 125 "lang.tab.c" /* yacc.c:355  */
+#line 129 "lang.tab.c" /* yacc.c:355  */
 };
 
 typedef union YYSTYPE YYSTYPE;
@@ -138,7 +142,7 @@ int yyparse (void);
 
 /* Copy the second part of user declarations.  */
 
-#line 142 "lang.tab.c" /* yacc.c:358  */
+#line 146 "lang.tab.c" /* yacc.c:358  */
 
 #ifdef short
 # undef short
@@ -436,7 +440,7 @@ static const yytype_uint8 yytranslate[] =
   /* YYRLINE[YYN] -- Source line where rule number YYN was defined.  */
 static const yytype_uint8 yyrline[] =
 {
-       0,    18,    18,    20,    21,    23,    24,    25,    26,    27
+       0,    22,    22,    24,    25,    27,    28,    29,    30,    31
 };
 #endif
 
@@ -1214,8 +1218,38 @@ yyreduce:
   YY_REDUCE_PRINT (yyn);
   switch (yyn)
     {
-      
-#line 1219 "lang.tab.c" /* yacc.c:1648  */
+        case 5:
+#line 27 "lang.y" /* yacc.c:1648  */
+    {printf("Trying to make a line");}
+#line 1225 "lang.tab.c" /* yacc.c:1648  */
+    break;
+
+  case 6:
+#line 28 "lang.y" /* yacc.c:1648  */
+    {printf("Trying to make a point");}
+#line 1231 "lang.tab.c" /* yacc.c:1648  */
+    break;
+
+  case 7:
+#line 29 "lang.y" /* yacc.c:1648  */
+    {printf("Trying to make a Circle");}
+#line 1237 "lang.tab.c" /* yacc.c:1648  */
+    break;
+
+  case 8:
+#line 30 "lang.y" /* yacc.c:1648  */
+    {printf("Trying to make a Rectangle");}
+#line 1243 "lang.tab.c" /* yacc.c:1648  */
+    break;
+
+  case 9:
+#line 31 "lang.y" /* yacc.c:1648  */
+    {printf("Trying to set the color");}
+#line 1249 "lang.tab.c" /* yacc.c:1648  */
+    break;
+
+
+#line 1253 "lang.tab.c" /* yacc.c:1648  */
       default: break;
     }
   /* User semantic actions sometimes alter yychar, and that requires

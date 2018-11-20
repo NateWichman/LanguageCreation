@@ -62,7 +62,7 @@ extern int yydebug;
 
 union YYSTYPE
 {
-#line 4 "lang.y" /* yacc.c:1910  */
+#line 8 "lang.y" /* yacc.c:1910  */
 int ival; float fval;
 
 #line 69 "lang.tab.h" /* yacc.c:1910  */

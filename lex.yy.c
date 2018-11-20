@@ -472,9 +472,11 @@ char *yytext;
 #line 1 "ZoomStrongJoy.lex"
 #line 2 "ZoomStrongJoy.lex"
   #include <stdio.h>
+  #include <stdlib.h>
+  #include "lang.tab.h"
 	int num_lines = 0;
-#line 476 "lex.yy.c"
-#line 477 "lex.yy.c"
+#line 478 "lex.yy.c"
+#line 479 "lex.yy.c"
 
 #define INITIAL 0
 
@@ -691,10 +693,10 @@ YY_DECL
 		}
 
 	{
-#line 6 "ZoomStrongJoy.lex"
+#line 8 "ZoomStrongJoy.lex"
 
 
-#line 697 "lex.yy.c"
+#line 699 "lex.yy.c"
 
 	while ( /*CONSTCOND*/1 )		/* loops until end-of-file is reached */
 		{
@@ -753,76 +755,76 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 8 "ZoomStrongJoy.lex"
-{printf("return: END\n");}
+#line 10 "ZoomStrongJoy.lex"
+{return END;}
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 9 "ZoomStrongJoy.lex"
-{printf("return: END_STATEMENT\n");}
+#line 11 "ZoomStrongJoy.lex"
+{return END_STATEMENT;}
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 10 "ZoomStrongJoy.lex"
-{printf("return: POINT\n");}
+#line 12 "ZoomStrongJoy.lex"
+{return POINT;}
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 11 "ZoomStrongJoy.lex"
-{printf("return: LINE\n");}
+#line 13 "ZoomStrongJoy.lex"
+{return LINE;}
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 12 "ZoomStrongJoy.lex"
-{printf("return: CIRCLE\n");}
+#line 14 "ZoomStrongJoy.lex"
+{return CIRCLE;}
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 13 "ZoomStrongJoy.lex"
-{printf("return: RECTANGLE\n");}
+#line 15 "ZoomStrongJoy.lex"
+{return RECTANGLE;}
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
-#line 14 "ZoomStrongJoy.lex"
-{printf("return: SET_COLOR\n");}
+#line 16 "ZoomStrongJoy.lex"
+{return SET_COLOR;}
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
-#line 15 "ZoomStrongJoy.lex"
-{printf("return: FLOAT %s", yytext);}
+#line 17 "ZoomStrongJoy.lex"
+{return FLOAT;}
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
-#line 16 "ZoomStrongJoy.lex"
-{printf("return: INT %s\n", yytext);}
+#line 18 "ZoomStrongJoy.lex"
+{return INT;}
 	YY_BREAK
 case 10:
 /* rule 10 can match eol */
 YY_RULE_SETUP
-#line 17 "ZoomStrongJoy.lex"
+#line 19 "ZoomStrongJoy.lex"
 {num_lines++;}
 	YY_BREAK
 case 11:
 YY_RULE_SETUP
-#line 18 "ZoomStrongJoy.lex"
+#line 20 "ZoomStrongJoy.lex"
 ; 
 	YY_BREAK
 case 12:
 YY_RULE_SETUP
-#line 19 "ZoomStrongJoy.lex"
+#line 21 "ZoomStrongJoy.lex"
 ;
 	YY_BREAK
 case 13:
 YY_RULE_SETUP
-#line 20 "ZoomStrongJoy.lex"
-{printf("ERROR, invalid lexeme '%s' at line %d\n", yytext, num_lines);}
+#line 22 "ZoomStrongJoy.lex"
+{printf("ERROR, invalid lexeme at line %d\n", num_lines);}
 	YY_BREAK
 case 14:
 YY_RULE_SETUP
-#line 22 "ZoomStrongJoy.lex"
+#line 24 "ZoomStrongJoy.lex"
 ECHO;
 	YY_BREAK
-#line 825 "lex.yy.c"
+#line 827 "lex.yy.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -1827,11 +1829,10 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 22 "ZoomStrongJoy.lex"
+#line 24 "ZoomStrongJoy.lex"
 
 
-int main(int *argc, char **argv){
-	yylex();
+/*int main(int *argc, char **argv){
 	return 0;
-}
+} */
 
