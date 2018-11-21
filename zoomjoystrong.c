@@ -77,3 +77,4 @@ void finish(){
 	SDL_DestroyWindow(window);
 	SDL_Quit();
 }
+
