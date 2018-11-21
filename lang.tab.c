@@ -67,7 +67,7 @@
 	#include <stdio.h>
 	#include "zoomjoystrong.h"
 	int yylex(void);
-	void yyerror(char*);
+	void yyerror(const char*);
 	int yyparse(void);
 
 #line 74 "lang.tab.c" /* yacc.c:339  */
@@ -85,7 +85,7 @@
 # undef YYERROR_VERBOSE
 # define YYERROR_VERBOSE 1
 #else
-# define YYERROR_VERBOSE 0
+# define YYERROR_VERBOSE 1
 #endif
 
 /* In a future release of Bison, this section will be replaced
@@ -122,7 +122,7 @@ extern int yydebug;
 
 union YYSTYPE
 {
-#line 8 "lang.y" /* yacc.c:355  */
+#line 11 "lang.y" /* yacc.c:355  */
 int ival; float fval;
 
 #line 129 "lang.tab.c" /* yacc.c:355  */
@@ -440,12 +440,12 @@ static const yytype_uint8 yytranslate[] =
   /* YYRLINE[YYN] -- Source line where rule number YYN was defined.  */
 static const yytype_uint8 yyrline[] =
 {
-       0,    22,    22,    24,    25,    27,    28,    29,    30,    31,
-      32
+       0,    25,    25,    27,    28,    30,    31,    32,    33,    34,
+      35
 };
 #endif
 
-#if YYDEBUG || YYERROR_VERBOSE || 0
+#if YYDEBUG || YYERROR_VERBOSE || 1
 /* YYTNAME[SYMBOL-NUM] -- String name of the symbol SYMBOL-NUM.
    First, the terminals, then, starting at YYNTOKENS, nonterminals.  */
 static const char *const yytname[] =
@@ -1222,37 +1222,37 @@ yyreduce:
   switch (yyn)
     {
         case 5:
-#line 27 "lang.y" /* yacc.c:1648  */
+#line 30 "lang.y" /* yacc.c:1648  */
     {printf("Trying to make a line"); line((yyvsp[-3].ival), (yyvsp[-2].ival), (yyvsp[-1].ival), (yyvsp[0].ival));}
 #line 1228 "lang.tab.c" /* yacc.c:1648  */
     break;
 
   case 6:
-#line 28 "lang.y" /* yacc.c:1648  */
+#line 31 "lang.y" /* yacc.c:1648  */
     {printf("Trying to make a point");point((yyvsp[-1].ival), (yyvsp[0].ival));}
 #line 1234 "lang.tab.c" /* yacc.c:1648  */
     break;
 
   case 7:
-#line 29 "lang.y" /* yacc.c:1648  */
+#line 32 "lang.y" /* yacc.c:1648  */
     {printf("Trying to make a Circle");circle((yyvsp[-2].ival), (yyvsp[-1].ival), (yyvsp[0].ival));}
 #line 1240 "lang.tab.c" /* yacc.c:1648  */
     break;
 
   case 8:
-#line 30 "lang.y" /* yacc.c:1648  */
+#line 33 "lang.y" /* yacc.c:1648  */
     {printf("Trying to make a Rectangle");rectangle((yyvsp[-3].ival),(yyvsp[-2].ival),(yyvsp[-1].ival),(yyvsp[0].ival));}
 #line 1246 "lang.tab.c" /* yacc.c:1648  */
     break;
 
   case 9:
-#line 31 "lang.y" /* yacc.c:1648  */
+#line 34 "lang.y" /* yacc.c:1648  */
     {printf("Trying to set the color");set_color((yyvsp[-2].ival),(yyvsp[-1].ival),(yyvsp[0].ival));}
 #line 1252 "lang.tab.c" /* yacc.c:1648  */
     break;
 
   case 10:
-#line 32 "lang.y" /* yacc.c:1648  */
+#line 35 "lang.y" /* yacc.c:1648  */
     {printf("Just an Integer for testing");}
 #line 1258 "lang.tab.c" /* yacc.c:1648  */
     break;
@@ -1486,10 +1486,10 @@ yyreturn:
 #endif
   return yyresult;
 }
-#line 35 "lang.y" /* yacc.c:1907  */
+#line 38 "lang.y" /* yacc.c:1907  */
 
 
-void yyerror(char *s){
+void yyerror(const char *s){
 	printf("yyerror, could not parse:  %s\n", s);
 }
 

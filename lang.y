@@ -2,9 +2,12 @@
 	#include <stdio.h>
 	#include "zoomjoystrong.h"
 	int yylex(void);
-	void yyerror(char*);
+	void yyerror(const char*);
 	int yyparse(void);
 %}
+
+%error-verbose
+
 %union {int ival; float fval;}
 %token END
 %token END_STATEMENT
@@ -34,7 +37,7 @@ statement: LINE INT INT INT INT {printf("Trying to make a line"); line($2, $3, $
 
 %%
 
-void yyerror(char *s){
+void yyerror(const char *s){
 	printf("yyerror, could not parse:  %s\n", s);
 }
 
