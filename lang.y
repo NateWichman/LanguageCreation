@@ -1,5 +1,6 @@
 %{
 	#include <stdio.h>
+	#include <SDL2/SDL.h>
 	#include "zoomjoystrong.h"
 	int yylex(void);
 	void yyerror(const char*);
@@ -27,7 +28,27 @@ program: statement_list END
 statement_list: statement END_STATEMENT
 	      | statement END_STATEMENT statement_list
 ;
-statement: LINE INT INT INT INT {printf("Trying to make a line"); line($2, $3, $4, $5);}
+statement: LINE INT INT INT INT {printf("Trying to make a line");
+	 			 int valid = 1;
+				 if($2 > HEIGHT || $2 > WIDTH){
+					valid = 0;
+				 }
+				 if($3 > HEIGHT || $3 > WIDTH){
+					valid = 0;
+				 }
+				 if($4 > HEIGHT || $4 > WIDTH){
+					valid = 0;
+				 }
+				 if($5 > HEIGHT || $5 > WIDTH){
+					valid = 0;
+				 }
+			         if(valid == 1){
+			                line($2, $3, $4, $5);
+				 }
+				 if(valid == 0){
+					printf("INVALID DIMENSIONS");
+				 }
+			}
 	 | POINT INT INT {printf("Trying to make a point");point($2, $3);}
 	 | CIRCLE INT INT INT {printf("Trying to make a Circle");circle($2, $3, $4);}
 	 | RECTANGLE INT INT INT INT {printf("Trying to make a Rectangle");rectangle($2,$3,$4,$5);}
