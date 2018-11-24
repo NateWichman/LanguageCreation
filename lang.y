@@ -32,7 +32,6 @@ statement: LINE INT INT INT INT {printf("Trying to make a line"); line($2, $3, $
 	 | CIRCLE INT INT INT {printf("Trying to make a Circle");circle($2, $3, $4);}
 	 | RECTANGLE INT INT INT INT {printf("Trying to make a Rectangle");rectangle($2,$3,$4,$5);}
 	 | SET_COLOR INT INT INT {printf("Trying to set the color");set_color($2,$3,$4);}
-	 | INT {printf("Just an Integer for testing");}
 
 
 %%
