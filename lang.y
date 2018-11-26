@@ -31,6 +31,7 @@ statement_list: statement END_STATEMENT
 statement: LINE INT INT INT INT {
 				 printf("Trying to make a line");
 	 			 int valid = 1;
+				 printf("SKJDF: %s\n", $2);
 				 if($2 > HEIGHT || $2 > WIDTH || $2 < 0){
 					valid = 0;
 				 }

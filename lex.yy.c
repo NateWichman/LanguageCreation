@@ -794,12 +794,12 @@ YY_RULE_SETUP
 case 8:
 YY_RULE_SETUP
 #line 18 "ZoomStrongJoy.lex"
-{return FLOAT;}
+{ yylval.fval= atoi(yytext); return FLOAT;}
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
 #line 19 "ZoomStrongJoy.lex"
-{return INT;}
+{ yylval.ival = atoi(yytext); return INT;}
 	YY_BREAK
 case 10:
 /* rule 10 can match eol */

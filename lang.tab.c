@@ -441,7 +441,7 @@ static const yytype_uint8 yytranslate[] =
   /* YYRLINE[YYN] -- Source line where rule number YYN was defined.  */
 static const yytype_uint8 yyrline[] =
 {
-       0,    26,    26,    28,    29,    31,    52,    53,    54,    55
+       0,    26,    26,    28,    29,    31,    54,    70,    89,   111
 };
 #endif
 
@@ -1221,18 +1221,20 @@ yyreduce:
     {
         case 5:
 #line 31 "lang.y" /* yacc.c:1648  */
-    {printf("Trying to make a line");
+    {
+				 printf("Trying to make a line");
 	 			 int valid = 1;
-				 if((yyvsp[-3].ival) > HEIGHT || (yyvsp[-3].ival) > WIDTH){
+				 printf("SKJDF: %s\n", (yyvsp[-3].ival));
+				 if((yyvsp[-3].ival) > HEIGHT || (yyvsp[-3].ival) > WIDTH || (yyvsp[-3].ival) < 0){
 					valid = 0;
 				 }
-				 if((yyvsp[-2].ival) > HEIGHT || (yyvsp[-2].ival) > WIDTH){
+				 if((yyvsp[-2].ival) > HEIGHT || (yyvsp[-2].ival) > WIDTH || (yyvsp[-2].ival) < 0){
 					valid = 0;
 				 }
-				 if((yyvsp[-1].ival) > HEIGHT || (yyvsp[-1].ival) > WIDTH){
+				 if((yyvsp[-1].ival) > HEIGHT || (yyvsp[-1].ival) > WIDTH || (yyvsp[-1].ival) < 0){
 					valid = 0;
 				 }
-				 if((yyvsp[0].ival) > HEIGHT || (yyvsp[0].ival) > WIDTH){
+				 if((yyvsp[0].ival) > HEIGHT || (yyvsp[0].ival) > WIDTH || (yyvsp[0].ival) < 0){
 					valid = 0;
 				 }
 			         if(valid == 1){
@@ -1242,35 +1244,106 @@ yyreduce:
 					printf("INVALID DIMENSIONS");
 				 }
 			}
-#line 1246 "lang.tab.c" /* yacc.c:1648  */
+#line 1248 "lang.tab.c" /* yacc.c:1648  */
     break;
 
   case 6:
-#line 52 "lang.y" /* yacc.c:1648  */
-    {printf("Trying to make a point");point((yyvsp[-1].ival), (yyvsp[0].ival));}
-#line 1252 "lang.tab.c" /* yacc.c:1648  */
+#line 54 "lang.y" /* yacc.c:1648  */
+    {       
+	 			 printf("Trying to make a point");
+	 		         int valid = 1;
+				 if((yyvsp[-1].ival) > HEIGHT || (yyvsp[-1].ival) > WIDTH || (yyvsp[-1].ival) < 0){
+					valid = 0;
+				 }
+				 if((yyvsp[0].ival) > HEIGHT || (yyvsp[0].ival) > WIDTH || (yyvsp[-1].ival) < 0){
+					valid = 0;
+				 }
+			         if(valid == 1){
+			                point((yyvsp[-1].ival), (yyvsp[0].ival));
+				 }
+				 if(valid == 0){
+					printf("INVALID DIMENSIONS");
+				 }
+		          }
+#line 1269 "lang.tab.c" /* yacc.c:1648  */
     break;
 
   case 7:
-#line 53 "lang.y" /* yacc.c:1648  */
-    {printf("Trying to make a Circle");circle((yyvsp[-2].ival), (yyvsp[-1].ival), (yyvsp[0].ival));}
-#line 1258 "lang.tab.c" /* yacc.c:1648  */
+#line 70 "lang.y" /* yacc.c:1648  */
+    {
+	 			 printf("Trying to make a Circle");
+	 			 int valid = 1;
+				 if((yyvsp[-2].ival) > HEIGHT || (yyvsp[-2].ival) > WIDTH || (yyvsp[-2].ival) < 0){
+					valid = 0;
+				 }
+				 if((yyvsp[-1].ival) > HEIGHT || (yyvsp[-1].ival) > WIDTH || (yyvsp[-1].ival) < 0){
+					valid = 0;
+				 }
+				 if((yyvsp[0].ival) > HEIGHT || (yyvsp[0].ival) > WIDTH || (yyvsp[0].ival) < 0){
+					valid = 0;
+				 }
+				 if(valid == 1){
+			                circle((yyvsp[-2].ival), (yyvsp[-1].ival), (yyvsp[0].ival));
+				 }
+				 if(valid == 0){
+					printf("INVALID DIMENSIONS");
+				 }
+			       }
+#line 1293 "lang.tab.c" /* yacc.c:1648  */
     break;
 
   case 8:
-#line 54 "lang.y" /* yacc.c:1648  */
-    {printf("Trying to make a Rectangle");rectangle((yyvsp[-3].ival),(yyvsp[-2].ival),(yyvsp[-1].ival),(yyvsp[0].ival));}
-#line 1264 "lang.tab.c" /* yacc.c:1648  */
+#line 89 "lang.y" /* yacc.c:1648  */
+    {
+	 			 printf("Trying to make a Rectangle");
+	 			 int valid = 1;
+				 if((yyvsp[-3].ival) > HEIGHT || (yyvsp[-3].ival) > WIDTH || (yyvsp[-3].ival) < 0){
+					valid = 0;
+				 }
+				 if((yyvsp[-2].ival) > HEIGHT || (yyvsp[-2].ival) > WIDTH || (yyvsp[-2].ival) < 0){
+					valid = 0;
+				 }
+				 if((yyvsp[-1].ival) > HEIGHT || (yyvsp[-1].ival) > WIDTH || (yyvsp[-1].ival) < 0){
+					valid = 0;
+				 }
+				 if((yyvsp[0].ival) > HEIGHT || (yyvsp[0].ival) > WIDTH || (yyvsp[0].ival) < 0){
+					valid = 0;
+				 }
+				 if(valid == 1){
+			                rectangle((yyvsp[-3].ival),(yyvsp[-2].ival),(yyvsp[-1].ival),(yyvsp[0].ival));
+				 }
+				 if(valid == 0){
+					printf("INVALID DIMENSIONS");
+				 }
+			}
+#line 1320 "lang.tab.c" /* yacc.c:1648  */
     break;
 
   case 9:
-#line 55 "lang.y" /* yacc.c:1648  */
-    {printf("Trying to set the color");set_color((yyvsp[-2].ival),(yyvsp[-1].ival),(yyvsp[0].ival));}
-#line 1270 "lang.tab.c" /* yacc.c:1648  */
+#line 111 "lang.y" /* yacc.c:1648  */
+    {
+	 			 printf("Trying to set the color");
+	 			 int valid = 1;
+	 			 if((yyvsp[-2].ival) > 255 || (yyvsp[-2].ival) < 0){
+				 	valid = 0;
+				 }
+				 if((yyvsp[-1].ival) > 255 || (yyvsp[-1].ival) < 0){
+					valid = 0;
+				 }
+				 if((yyvsp[0].ival) > 255 || (yyvsp[0].ival) < 0){
+					valid = 0;
+				 }if(valid == 1){
+			                set_color((yyvsp[-2].ival),(yyvsp[-1].ival),(yyvsp[0].ival));
+				 }
+				 if(valid == 0){
+					printf("INVALID DIMENSIONS");
+				 }
+			}
+#line 1343 "lang.tab.c" /* yacc.c:1648  */
     break;
 
 
-#line 1274 "lang.tab.c" /* yacc.c:1648  */
+#line 1347 "lang.tab.c" /* yacc.c:1648  */
       default: break;
     }
   /* User semantic actions sometimes alter yychar, and that requires
@@ -1498,7 +1571,7 @@ yyreturn:
 #endif
   return yyresult;
 }
-#line 58 "lang.y" /* yacc.c:1907  */
+#line 131 "lang.y" /* yacc.c:1907  */
 
 
 void yyerror(const char *s){

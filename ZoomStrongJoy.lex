@@ -15,8 +15,8 @@ LINE {return LINE;}
 CIRCLE {return CIRCLE;}
 RECTANGLE {return RECTANGLE;}
 SET_COLOR {return SET_COLOR;}
-[0-9]+\.+[0-9]+ {return FLOAT;}
-[0-9]+ {return INT;}
+[0-9]+\.+[0-9]+ { yylval.fval= atoi(yytext); return FLOAT;}
+[0-9]+ { yylval.ival = atoi(yytext); return INT;}
 [\n\r] {num_lines++;}
 [ \t] ; 
 [\s] ;
